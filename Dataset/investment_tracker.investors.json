@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "69b950014e6becaf24a246a2"
+  },
+  "name": "john ",
+  "email": "john@gmail.com",
+  "country": "India",
+  "amount": 5000,
+  "project_name": "P!",
+  "fund_type": "Inv",
+  "success_rate": 97,
+  "compliance_level": 95,
+  "transparency_score": 97,
+  "geo_risk": 38,
+  "market_volatility": 36,
+  "regulatory_instability": 40,
+  "trust_score": 96.4,
+  "risk_score": 37.8,
+  "decision": "APPROVED",
+  "investment_status": "ACTIVE",
+  "timestamp": "2026-03-17T18:28:41.342131",
+  "previous_hash": "GENESIS_BLOCK",
+  "transaction_hash": "1f5420900a9faeaec721620a97f7e5ffebeba72dba3f93f696a934928793e318"
+},
+{
+  "_id": {
+    "$oid": "69b950654e6becaf24a246a3"
+  },
+  "name": "smith",
+  "email": "smith2@gmail.com",
+  "country": "Canada",
+  "amount": 4000,
+  "project_name": "P1",
+  "fund_type": "Inv",
+  "success_rate": 84,
+  "compliance_level": 85,
+  "transparency_score": 86,
+  "geo_risk": 10,
+  "market_volatility": 18,
+  "regulatory_instability": 7,
+  "trust_score": 84.9,
+  "risk_score": 12.05,
+  "decision": "APPROVED",
+  "investment_status": "ACTIVE",
+  "timestamp": "2026-03-17T18:30:21.945036",
+  "previous_hash": "1f5420900a9faeaec721620a97f7e5ffebeba72dba3f93f696a934928793e318",
+  "transaction_hash": "457ee44405ee8e6e4bc7c727ee71c90bed14241233f7eed86367ec44380fe0c6"
+},
+{
+  "_id": {
+    "$oid": "69b9508b4e6becaf24a246a4"
+  },
+  "name": "Test",
+  "email": "test@gmail.com",
+  "country": "DR Congo",
+  "amount": 6000,
+  "project_name": "P1",
+  "fund_type": "Inv",
+  "success_rate": 45,
+  "compliance_level": 42,
+  "transparency_score": 48,
+  "geo_risk": 85,
+  "market_volatility": 82,
+  "regulatory_instability": 86,
+  "trust_score": 45,
+  "risk_score": 84.2,
+  "decision": "REJECTED",
+  "investment_status": "LOCKED",
+  "timestamp": "2026-03-17T18:30:59.118391",
+  "previous_hash": "32eb2f23bc760c3f1187853c3ee8be9158a385bce2ff2bd2a0eb341af63486ed",
+  "transaction_hash": "8731bc7c026e73f7896d3792eff48ed86c2a04041aa363fb957a58f66142fed2"
+}]

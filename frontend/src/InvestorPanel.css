@@ -1,0 +1,390 @@
+/* InvestorPanel.css */
+
+.ip-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 32px 40px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.ip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ip-header h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  color: #00e5ff;
+}
+
+.ip-subtitle {
+  margin: 0;
+  color: #78909c;
+  font-size: 14px;
+}
+
+.ip-readonly-badge {
+  background: rgba(244, 162, 97, 0.15);
+  border: 1px solid rgba(244, 162, 97, 0.4);
+  color: #f4a261;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.ip-btn-logout {
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #e63946, #c1121f);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.ip-btn-logout:hover { opacity: 0.85; }
+
+/* ── Status Strip ────────────────────────────────────────── */
+.ip-status-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.ip-status-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,229,255,0.1);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ip-status-label {
+  font-size: 11px;
+  color: #546e7a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ip-status-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ── Tabs ────────────────────────────────────────────────── */
+.ip-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.ip-tab {
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: #78909c;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.ip-tab:hover { background: rgba(0,229,255,0.08); color: #00e5ff; }
+
+.ip-tab-active {
+  background: rgba(0,180,216,0.15);
+  border-color: rgba(0,180,216,0.4);
+  color: #00e5ff;
+  font-weight: bold;
+}
+
+.ip-tab-content { animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+/* ── Cards ───────────────────────────────────────────────── */
+.ip-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,229,255,0.08);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.ip-card-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #00e5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,229,255,0.1);
+}
+
+.ip-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Rows ────────────────────────────────────────────────── */
+.ip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 13px;
+  gap: 10px;
+}
+
+.ip-row:last-child { border-bottom: none; }
+
+.ip-row span { color: #546e7a; flex-shrink: 0; }
+.ip-row strong { color: #e0e0e0; text-align: right; }
+
+/* ── Score bars ──────────────────────────────────────────── */
+.ip-score-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #78909c;
+  margin-bottom: 4px;
+}
+
+.ip-score-bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.ip-score-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.ip-trust-total {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px;
+  color: #78909c;
+  text-align: right;
+}
+
+/* ── Metrics strip ───────────────────────────────────────── */
+.ip-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.ip-metric-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,229,255,0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+}
+
+.ip-metric-label {
+  font-size: 11px;
+  color: #546e7a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.ip-metric-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ── Table ───────────────────────────────────────────────── */
+.ip-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.ip-table th {
+  padding: 10px 12px;
+  text-align: left;
+  color: #00e5ff;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(0,229,255,0.15);
+  background: rgba(0,229,255,0.04);
+}
+
+.ip-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: #b0bec5;
+}
+
+.ip-table tr:hover td { background: rgba(0,229,255,0.03); }
+
+/* ── Stage rows ──────────────────────────────────────────── */
+.ip-stage-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.ip-stage-row:last-child { border-bottom: none; }
+
+.ip-stage-icon { font-size: 24px; flex-shrink: 0; padding-top: 2px; }
+
+.ip-stage-info { flex: 1; }
+
+.ip-stage-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #e0e0e0;
+  margin-bottom: 4px;
+}
+
+.ip-stage-days { font-size: 11px; color: #546e7a; font-weight: normal; }
+
+.ip-stage-desc { font-size: 12px; color: #78909c; margin-bottom: 6px; }
+
+.ip-stage-amounts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+  min-width: 80px;
+}
+
+/* ── Hash / Blockchain ───────────────────────────────────── */
+.ip-hash-box {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,229,255,0.1);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.ip-hash-label {
+  display: block;
+  font-size: 10px;
+  color: #546e7a;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.ip-hash-value {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #00e5ff;
+  word-break: break-all;
+}
+
+.ip-btn-verify {
+  margin-top: 16px;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ip-btn-verify:hover { opacity: 0.85; }
+
+.ip-verify-result {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+}
+
+.ip-verify-ok {
+  background: rgba(0,200,151,0.1);
+  border: 1px solid rgba(0,200,151,0.3);
+}
+
+.ip-verify-fail {
+  background: rgba(230,57,70,0.1);
+  border: 1px solid rgba(230,57,70,0.3);
+}
+
+/* ── No record / Loading ─────────────────────────────────── */
+.ip-no-record {
+  text-align: center;
+  padding: 80px 20px;
+  color: #546e7a;
+}
+
+.ip-no-record-icon { font-size: 48px; margin-bottom: 16px; }
+.ip-no-record h2   { color: #78909c; margin-bottom: 10px; }
+.ip-no-record p    { font-size: 14px; margin: 6px 0; }
+
+.ip-loading {
+  text-align: center;
+  padding: 100px 20px;
+  color: #546e7a;
+  font-size: 14px;
+}
+
+.ip-spinner {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 12px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ── Section title ───────────────────────────────────────── */
+.ip-section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #78909c;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .ip-container       { padding: 20px; }
+  .ip-status-strip    { grid-template-columns: 1fr 1fr; }
+  .ip-metrics-strip   { grid-template-columns: 1fr 1fr; }
+  .ip-grid-2          { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .ip-status-strip  { grid-template-columns: 1fr; }
+  .ip-metrics-strip { grid-template-columns: 1fr; }
+}

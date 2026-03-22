@@ -1,0 +1,304 @@
+/* AuditLog.css - Confidential Document Style */
+
+.audit-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.audit-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+  padding-bottom: 20px;
+}
+
+.audit-header h1 {
+  font-size: 26px;
+  color: #00e5ff;
+  letter-spacing: 0.2em;
+  margin: 0 0 6px;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.confidential-label {
+  color: #ff4d4d;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #546e7a;
+  margin: 4px 0;
+}
+
+/* ── Stats Strip ─────────────────────────────────────────── */
+.audit-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.12);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.stat-box .stat-number {
+  font-size: 26px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-box .stat-label {
+  font-size: 11px;
+  color: #546e7a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Controls ────────────────────────────────────────────── */
+.audit-controls {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 229, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.control-group label {
+  font-size: 11px;
+  color: #546e7a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.audit-input {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.audit-input:focus {
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.audit-input::placeholder {
+  color: #546e7a;
+}
+
+.audit-select {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(30, 40, 50, 0.9);
+  color: white;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.audit-select:focus {
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.audit-button {
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.audit-button:hover { opacity: 0.85; }
+
+.audit-button-back {
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #37474f, #263238);
+  color: #90a4ae;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.audit-button-back:hover { opacity: 0.85; }
+
+/* ── Summary Bar ─────────────────────────────────────────── */
+.audit-summary {
+  font-size: 12px;
+  color: #546e7a;
+  margin-bottom: 14px;
+  padding: 0 2px;
+}
+
+.audit-summary strong { color: #00e5ff; }
+
+/* ── Error ───────────────────────────────────────────────── */
+.audit-error {
+  background: rgba(244, 67, 54, 0.12);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ef9a9a;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* ── Table ───────────────────────────────────────────────── */
+.audit-logs {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.audit-table thead tr {
+  background: rgba(0, 229, 255, 0.06);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.audit-table th {
+  padding: 12px 14px;
+  text-align: left;
+  color: #00e5ff;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.audit-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s;
+}
+
+.audit-row:hover { background: rgba(0, 229, 255, 0.04); }
+.audit-row:last-child { border-bottom: none; }
+
+.audit-table td {
+  padding: 10px 14px;
+  vertical-align: top;
+  color: #b0bec5;
+}
+
+.timestamp-cell {
+  white-space: nowrap;
+  color: #78909c !important;
+  font-size: 11px !important;
+}
+
+.action-cell {
+  font-weight: bold;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+.user-cell   { color: #80cbc4 !important; }
+.resource-cell { color: #ffd54f !important; }
+
+.changes-cell details summary {
+  cursor: pointer;
+  color: #00e5ff;
+  font-size: 11px;
+}
+
+.changes-cell pre {
+  font-size: 11px;
+  margin: 6px 0 0;
+  color: #90a4ae;
+  max-width: 280px;
+  overflow-x: auto;
+}
+
+.status-cell {
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.audit-footer {
+  margin-top: 30px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 229, 255, 0.1);
+  padding-top: 20px;
+  font-size: 12px;
+  color: #546e7a;
+  letter-spacing: 0.1em;
+}
+
+/* ── Loading ─────────────────────────────────────────────── */
+.audit-loading {
+  text-align: center;
+  padding: 80px 20px;
+  color: #546e7a;
+  font-size: 14px;
+}
+
+.audit-loading-spinner {
+  font-size: 32px;
+  margin-bottom: 12px;
+  animation: spin 1.5s linear infinite;
+  display: block;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .audit-container { padding: 20px; }
+  .audit-stats-strip { grid-template-columns: 1fr 1fr; }
+  .audit-controls { flex-direction: column; }
+  .control-group { min-width: unset; width: 100%; }
+}
