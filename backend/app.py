@@ -409,27 +409,75 @@ def update_investor(id):
         create_audit_log(action="UPDATE_INVESTOR", user="admin", investor_id=id, status="FAILED", changes={"error": str(e)})
         return jsonify({"error": str(e)}), 500
 
+def rebuild_blockchain_chain():
+       """Rebuild blockchain chain after deletion"""
+       try:
+           blocks = list(investors.find().sort("_id", 1))
+           prev_hash = "GENESIS"
+           
+           for block in blocks:
+               updated_data = {
+                   "name": block.get("name"),
+                   "email": block.get("email"),
+                   "country": block.get("country"),
+                   "amount": block.get("amount"),
+                   "project_name": block.get("project_name"),
+                   "fund_type": block.get("fund_type"),
+                   "success_rate": block.get("success_rate"),
+                   "compliance_level": block.get("compliance_level"),
+                   "transparency_score": block.get("transparency_score"),
+                   "geo_risk": block.get("geo_risk"),
+                   "market_volatility": block.get("market_volatility"),
+                   "regulatory_instability": block.get("regulatory_instability"),
+                   "trust_score": block.get("trust_score"),
+                   "risk_score": block.get("risk_score"),
+                   "decision": block.get("decision"),
+                   "investment_status": block.get("investment_status"),
+                   "timestamp": block.get("timestamp"),
+                   "previous_hash": prev_hash,
+               }
+               
+               new_hash = generate_transaction_hash(updated_data)
+               
+               investors.update_one(
+                   {"_id": block["_id"]},
+                   {"$set": {
+                       "previous_hash": prev_hash,
+                       "transaction_hash": new_hash
+                   }}
+               )
+               
+               prev_hash = new_hash
+           
+           print(f"✅ Blockchain chain rebuilt with {len(blocks)} blocks")
+       except Exception as e:
+           print(f"❌ Error: {str(e)}")
+           raise
 @app.route("/d_investor/<id>", methods=["DELETE"])
 def delete_investor(id):
-    try:
-        inv = investors.find_one({"_id": ObjectId(id)})
-        inv_name = inv.get("name") if inv else None
-        result = investors.delete_one({"_id": ObjectId(id)})
-        if result.deleted_count == 0:
-            return jsonify({"error": "Not found"}), 404
-        create_audit_log(
-            action="DELETE_INVESTOR",
-            user="admin",
-            investor_id=id,
-            investor_name=inv_name,
-            status="SUCCESS"
-        )
-        return jsonify({"message": "✅ Deleted"}), 200
-    except InvalidId:
-        return jsonify({"error": "Invalid ID"}), 400
-    except Exception as e:
-        create_audit_log(action="DELETE_INVESTOR", user="admin", investor_id=id, status="FAILED", changes={"error": str(e)})
-        return jsonify({"error": str(e)}), 500
+       try:
+           inv = investors.find_one({"_id": ObjectId(id)})
+           inv_name = inv.get("name") if inv else None
+           result = investors.delete_one({"_id": ObjectId(id)})
+           if result.deleted_count == 0:
+               return jsonify({"error": "Not found"}), 404
+           
+           # 🔧 ADD THIS LINE - Rebuild chain after deletion
+           rebuild_blockchain_chain()
+           
+           create_audit_log(
+               action="DELETE_INVESTOR",
+               user="admin",
+               investor_id=id,
+               investor_name=inv_name,
+               status="SUCCESS"
+           )
+           return jsonify({"message": "✅ Deleted"}), 200
+       except InvalidId:
+           return jsonify({"error": "Invalid ID"}), 400
+       except Exception as e:
+           create_audit_log(action="DELETE_INVESTOR", user="admin", investor_id=id, status="FAILED", changes={"error": str(e)})
+           return jsonify({"error": str(e)}), 500
 
 @app.route("/validate_chain", methods=["GET"])
 def validate_chain():
