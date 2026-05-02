@@ -9,7 +9,7 @@ import InvestorPortfolio from "./InvestorPortfolio";
 import SystemHealth from "./SystemHealth";
 import AuditLog from "./AuditLog";
 
-const BASE_URL = "http://127.0.0.1:5000";
+const BASE_URL = import.meta.env.VITE_API_URL;
 const ADMIN_CREDENTIALS = { username: "admin", password: "invest@123" };
 
 // ─────────────────────────────────────────────────────────────────────────────
