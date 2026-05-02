@@ -17,7 +17,7 @@ const SystemHealth = ({ onBack }) => {
 
   const fetchSystemHealth = async () => {
     try {
-      const response = await fetch('http://localhost:5000/system_health');
+    const response = await fetch('https://investment-tracker-3-1tf2.onrender.com/system_health');
       if (!response.ok) throw new Error('Failed to fetch health');
       const data = await response.json();
       setHealth(data);

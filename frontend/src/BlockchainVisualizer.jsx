@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './BlockchainVisualizer.css';
 
-const BASE_URL = 'http://127.0.0.1:5000';
+const BASE_URL = 'https://investment-tracker-3-1tf2.onrender.com';
 
 const BlockchainVisualizer = ({ onBack }) => {
   const [blocks,       setBlocks]       = useState([]);

@@ -25,7 +25,7 @@ const AuditLog = ({ onBack }) => {
 
   const fetchAuditLogs = async () => {
     try {
-      const response = await fetch('http://localhost:5000/audit_logs');
+      const response = await fetch('https://investment-tracker-3-1tf2.onrender.com/audit_logs');
       if (!response.ok) throw new Error(`Server error: ${response.status}`);
       const data = await response.json();
       setLogs(Array.isArray(data) ? data : []);
@@ -39,7 +39,7 @@ const AuditLog = ({ onBack }) => {
 
   const fetchStats = async () => {
     try {
-      const response = await fetch('http://localhost:5000/audit_stats');
+      const response = await fetch('https://investment-tracker-3-1tf2.onrender.com/audit_stats');
       if (!response.ok) return;
       const data = await response.json();
       setStats(data);

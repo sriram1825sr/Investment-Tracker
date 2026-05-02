@@ -45,8 +45,7 @@ const InvestorPortfolio = ({ investorId, onBack }) => {
 
   const fetchInvestorData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/s_investor/${investorId}`);
-      if (!response.ok) throw new Error('Failed to fetch investor');
+      const response = await fetch(`https://investment-tracker-3-1tf2.onrender.com/s_investor/${investorId}`);      if (!response.ok) throw new Error('Failed to fetch investor');
       const data = await response.json();
       setInvestor(data);
       setError(null);
@@ -60,7 +59,7 @@ const InvestorPortfolio = ({ investorId, onBack }) => {
 
   const verifyBlockchainHash = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/verify_hash/${investorId}`);
+      const response = await fetch(`https://investment-tracker-3-1tf2.onrender.com/verify_hash/${investorId}`);
       const data = await response.json();
       setHashVerified(data.verified);
     } catch (err) {
@@ -70,7 +69,7 @@ const InvestorPortfolio = ({ investorId, onBack }) => {
 
   const fetchFundUtilization = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/fund_utilization/${investorId}`);
+     const response = await fetch(`https://investment-tracker-3-1tf2.onrender.com/fund_utilization/${investorId}`);
       if (response.ok) {
         const data = await response.json();
         setFundUtilization(data);
