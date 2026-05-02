@@ -243,7 +243,8 @@ app = Flask(__name__)
 CORS(app)
 
 try:
-    client = MongoClient("mongodb://localhost:27017", serverSelectionTimeoutMS=2000)
+    MONGO_URI = "mongodb+srv://projectadmin:ProjectAdmin159357@it-1.qww8soq.mongodb.net/?appName=IT-1"
+    client = MongoClient(MONGO_URI)
     db = client["investment_tracker"]
     investors = db["investors"]
     client.server_info()
