@@ -240,7 +240,7 @@ def generate_monthly_returns(investor):
 
 # Flask Setup
 app = Flask(__name__)
-CORS(app, origins=["https://investment-tracker-teal.vercel.app"])
+CORS(app, origins=["https://investment-tracker-imgpw1rmv-sriram1825srs-projects.vercel.app"])
 
 try:
     MONGO_URI = "mongodb+srv://projectadmin:ProjectAdmin159357@it-1.qww8soq.mongodb.net/?appName=IT-1"
