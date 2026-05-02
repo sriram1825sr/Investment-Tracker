@@ -240,7 +240,7 @@ def generate_monthly_returns(investor):
 
 # Flask Setup
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://investment-tracker-teal.vercel.app"])
 
 try:
     MONGO_URI = "mongodb+srv://projectadmin:ProjectAdmin159357@it-1.qww8soq.mongodb.net/?appName=IT-1"
@@ -954,4 +954,4 @@ def system_health():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
