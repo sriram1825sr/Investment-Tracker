@@ -9,7 +9,7 @@ import InvestorPortfolio from "./InvestorPortfolio";
 import SystemHealth from "./SystemHealth";
 import AuditLog from "./AuditLog";
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+const BASE_URL = "https://investment-tracker-3-1tf2.onrender.com";
 const ADMIN_CREDENTIALS = { username: "admin", password: "invest@123" };
 
 // ─────────────────────────────────────────────────────────────────────────────
